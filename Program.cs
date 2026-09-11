@@ -4,42 +4,49 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
-        Console.WriteLine("Holita dsasda");
+        int saldo = 5000000;
+        Console.WriteLine("1. Consultar saldo \n2. Depositar dinero \n3. Retirar dinero \n4. Salir \n");
+        
+        string respuesta = Console.ReadLine();  
+        int respuestaInt = Convert.ToInt32(respuesta);
+        int passwordAccount = 1234;
+        
 
-        double numero = 20.5;
-
-        // Esto convierte datos a un entero
-        // y lo aproxima al entero más cercano
-        int numeroEntero = Convert.ToInt32(numero);
-
-        Console.WriteLine("Goli");
-        Console.WriteLine(numeroEntero);
-
-        // Convertir numero a texto
-        string esUnString = numero.ToString();
-        Console.WriteLine(esUnString);
-
-        /*
-        string name = Console.ReadLine();
-        int Edad = Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine("Hola mi nombre es: " + name + " de veras");
-        Console.WriteLine("Motivate Juan tu puedes con esto nada nunca te queda grande");
-        Console.WriteLine("Tengo " + Edad + " años");
-        */
-        string age = "Ingresa tu edad: ";
-        Console.WriteLine(age);
-        age = Console.ReadLine();
-        int ageInt = Convert.ToInt32(age);
-        string edad = "Tienes " + ageInt + " años";
-        Console.WriteLine(edad);
-        if (ageInt > 18)
+        if (respuestaInt == 1)
         {
-            Console.WriteLine("Eres mayor de edad.");
+            Console.WriteLine("Saldo actual: " + saldo);
         }
-        else
+        else if(respuestaInt == 2)
         {
-            Console.WriteLine("No eres mayor de edad.");
+            Console.WriteLine("Cuanto quiere depositar?");
+            string cantidadDepositada = Console.ReadLine();
+            int cantidadDepositadaInt = Convert.ToInt32(cantidadDepositada);
+            saldo = saldo + cantidadDepositadaInt;
+            Console.WriteLine("El salfo final es:" + saldo ); 
+            /* public void Sumar(int saldo, int cantidadDepositadaInt )
+            {
+            return saldo + cantidadDepositada
+            Console.WriteLine("Tu saldo final es:" + saldo)
+            } */
         }
+        else if(respuestaInt == 3)
+        {
+            Console.WriteLine("Cuanto quiere retirar?");
+            string cantidadRetirar = Console.ReadLine();
+            int cantidadRetirarInt = Convert.ToInt32(cantidadRetirar);
+            saldo = saldo - cantidadRetirarInt; 
+            /* public int Restar(int cantidadRetirarInt, int saldo){
+                return saldo - cantidadRetirar
+                Console.WriteLine("Tu salgo final es:" + saldo)
+            } */
+        }
+        else if(respuestaInt == 4)
+        {
+            Console.WriteLine("Listo entonces vete a la chingada");
+        }
+
+
+
+         
     }
 }
